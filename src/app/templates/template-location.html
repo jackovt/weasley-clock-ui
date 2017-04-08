@@ -1,0 +1,14 @@
+<h1>Locations</h1>
+<div *ngIf="selectedLocation">
+  <h3>{{selectedLocation.name}}</h3>
+  <span>id: {{selectedLocation.id}}</span>
+</div>
+<div *ngIf="locations.length>0">
+  <li *ngFor="let location of locations"
+  (click)="onSelect(location)">
+  <span class="badge">{{location.id}}</span> {{location.name}}
+  </li>
+</div>
+<div *ngIf="locations.length<=0">
+  <h2>No Locations</h2>
+</div>
